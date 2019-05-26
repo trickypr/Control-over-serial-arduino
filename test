@@ -6,7 +6,7 @@ then
   arduino --verify --board arduino:avr:uno ./Control_over_serial/Control_over_serial.ino 
 fi
 
-if [$1 == 2]
+if test "$1" = "sam"
 then
   echo "Testing for sam (Due)"
   arduino --verify --board arduino:sam:due ./Control_over_serial/Control_over_serial.ino 
