@@ -19,8 +19,6 @@ jobs:
     - stage: Test
       name: "AVR (Uno)"
       script: ./test avr
-    - script: ./test sam
-      name: "SAM (Due)"
     - stage: GitHub Release
       script: ./build
       deploy:

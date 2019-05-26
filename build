@@ -24,9 +24,9 @@ building mega
 arduino ./Control_over_serial/Control_over_serial.ino --verify --board arduino:avr:mega --pref build.path=compiled/
 rename_and_move mega
 
-building due
-arduino ./Control_over_serial/Control_over_serial.ino --verify --board arduino:sam:due --pref build.path=compiled/
-rename_and_move due
+# building due
+# arduino ./Control_over_serial/Control_over_serial.ino --verify --board arduino:sam:due --pref build.path=compiled/
+# rename_and_move due
 
 building micro
 arduino ./Control_over_serial/Control_over_serial.ino --verify --board arduino:avr:micro --pref build.path=compiled/
