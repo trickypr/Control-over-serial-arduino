@@ -18,8 +18,8 @@ jobs:
   include:
     - stage: Test
       name: "AVR (Uno)"
-      script: ./test 1
-    - script: ./test 2
+      script: ./test avr
+    - script: ./test sam
       name: "SAM (Due)"
     - stage: GitHub Release
       script: ./build
