@@ -12,6 +12,7 @@ install:
   - sudo mv arduino-1.8.9 /usr/local/share/arduino
   - sudo ln -s /usr/local/share/arduino/arduino /usr/local/bin/arduino
   - chmod u+x ./test
+  - chmod u+x ./build
 
 jobs:
   include:
@@ -20,3 +21,24 @@ jobs:
       script: ./test 1
     - script: ./test 2
       name: "SAM (Due)"
+    - stage: GitHub Release
+      script: ./build
+      deploy:
+        provider: releases
+        api_key: $GITHUB_OAUTH_TOKEN
+        skip_cleanup: true
+        file:
+          - "uno.hex"
+          - "nano.hex"
+          - "maga.hex"
+          - "due.hex"
+          - "micro.hex"
+          - "leonardo.hex"
+          - "uno.with_bootloader.hex"
+          - "nano.with_bootloader.hex"
+          - "maga.with_bootloader.hex"
+          - "due.with_bootloader.hex"
+          - "micro.with_bootloader.hex"
+          - "leonardo.with_bootloader.hex"
+        on:
+          tags: true

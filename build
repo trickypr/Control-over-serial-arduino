@@ -1,0 +1,39 @@
+#!/bin/bash
+
+rename_and_move()
+{
+  mv ./compiled/Control_over_serial.ino.hex ./$1.hex
+  mv ./compiled/Control_over_serial.ino.with_bootloader.hex ./$1.with_bootloader.hex
+  rm -rf ./compiled/
+}
+
+building()
+{
+  echo "Building $1"
+}
+
+building Uno
+/Applications/Arduino.app/Contents/MacOS/Arduino ./Control_over_serial/Control_over_serial.ino --verify --board arduino:avr:uno --pref build.path=compiled/
+rename_and_move uno
+
+building nano
+/Applications/Arduino.app/Contents/MacOS/Arduino ./Control_over_serial/Control_over_serial.ino --verify --board arduino:avr:nano --pref build.path=compiled/
+rename_and_move nano
+
+building mega
+/Applications/Arduino.app/Contents/MacOS/Arduino ./Control_over_serial/Control_over_serial.ino --verify --board arduino:avr:mega --pref build.path=compiled/
+rename_and_move mega
+
+building due
+/Applications/Arduino.app/Contents/MacOS/Arduino ./Control_over_serial/Control_over_serial.ino --verify --board arduino:sam:due --pref build.path=compiled/
+rename_and_move due
+
+building micro
+/Applications/Arduino.app/Contents/MacOS/Arduino ./Control_over_serial/Control_over_serial.ino --verify --board arduino:avr:micro --pref build.path=compiled/
+rename_and_move micro
+
+building leonardo
+/Applications/Arduino.app/Contents/MacOS/Arduino ./Control_over_serial/Control_over_serial.ino --verify --board arduino:avr:leonardo --pref build.path=compiled/
+rename_and_move leonardo
+
+rm -rf ./compiled/
