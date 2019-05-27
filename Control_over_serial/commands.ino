@@ -6,6 +6,8 @@ void callCommand() {
     help();
   } else if (command == "verion" || command == "v") {
     Serial.println(version);
+  } else if (command == "reset") {
+    setup();
   }
 
   // Digital commands
