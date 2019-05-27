@@ -14,14 +14,14 @@ void callCommand() {
   else if (command == "pinMode") {
     pinMode(gpio, value);
   } else if (command == "digitalRead") {
-    Serial.println(digitalRead(gpio));
+    Serial.println(value +' ' + digitalRead(gpio));
   } else if (command == "digitalWrite") {
     digitalWrite(gpio, value);
   }
 
   // Analog commands
   else if (command == "analogRead") {
-    Serial.println(analogRead(gpio));
+    Serial.println(value + ' ' + analogRead(gpio));
   } else if (command == "analogWrite") {
     analogWrite(gpio, value);
   }
@@ -34,9 +34,9 @@ void callCommand() {
   } else if (command == "delayMicroseconds") {
     delayMicroseconds(gpio);
   } else if (command == "micros") {
-    Serial.println(micros());
+    Serial.println(gpio + ' ' + micros());
   } else if (command == "millis") {
-    Serial.println(millis());
+    Serial.println(gpio + ' ' + millis());
   }
 
   // Unknown commands

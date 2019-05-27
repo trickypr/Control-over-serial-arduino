@@ -20,10 +20,10 @@ void setup()
   }
   
   while (!Serial) {
-    delay(1000);
+    // delay(1000);
   }
 
-  Serial.println("Arduino over serial " + version + "\nThis software is © TrickyPR under GNU AGPLv3. More info is available on this program's github repo.");
+  Serial.println("Control over serial " + version + "\nThis software is © TrickyPR under GNU AGPLv3. More info is available on this program's github repo.");
   Serial.println("Ok");
 }
 
