@@ -24,7 +24,7 @@ void setup()
   }
 
   Serial.println("Arduino over serial " + version + "\nThis software is © TrickyPR under GNU AGPLv3. More info is available on this program's github repo.");
-  Serial.println("Ok \n\n");
+  Serial.println("Ok");
 }
 
 String getValue(String data, char separator, int index)

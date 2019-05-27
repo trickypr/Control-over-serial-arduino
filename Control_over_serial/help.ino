@@ -20,5 +20,5 @@ void help() {
 //  "micros: Wrapper for the micros() function\n"
 //  "millis: Wrapper for the millis() function\n"
 //  );
-  Serial.println("Help is available at: https://github.com/trickypr/Control-over-serial-arduino/wiki")
+  Serial.println("Help is available at: https://github.com/trickypr/Control-over-serial-arduino/wiki");
 }
