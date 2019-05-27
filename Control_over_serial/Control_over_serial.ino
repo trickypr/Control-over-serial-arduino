@@ -1,5 +1,7 @@
 const String version = "1.0.0";
 
+bool serialOn = false;
+
 String command = "";
 String args = "";
 int gpio = -1;
@@ -12,10 +14,15 @@ bool clearToRead = true;
 
 void setup()
 {
-  Serial.begin(9600);
+  if (!serialOn) {
+    Serial.begin(9600);
+    serialOn = true;
+  }
+  
   while (!Serial) {
     delay(1000);
   }
+
   Serial.println("Arduino over serial " + version + "\nThis software is © TrickyPR under GNU AGPLv3. More info is available on this program's github repo.");
   Serial.println("Ok \n\n");
 }
