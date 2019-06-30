@@ -1,23 +1,11 @@
-#define version "1.0.0"
-#define updateURL "https://raw.githubusercontent.com/trickypr/Control-over-serial-arduino/master/versions.json"
-#define helpURL "https://github.com/trickypr/Control-over-serial-arduino/wiki"
-
 void callCommand() {
   // Debug and constants
   if (command == "echo") {
     Serial.println(args);
   } else if (command == "help") {
-    const String helpString = "Help is available at: ";
-    helpString += helpURL;
-    
-    Serial.println(helpString);
-  } else if (command == "version" || command == "v") {
-    const String versionString = version;
-    versionString += "\nOriginally by trickypr and the community under GNU AGPLv3";
-    versionString += "\nUpdate URL: ";
-    versionString += updateURL;
-    
-    Serial.println(versionString);
+    help();
+  } else if (command == "verion" || command == "v") {
+    Serial.println(version);
   } else if (command == "reset") {
     setup();
   }
@@ -53,6 +41,6 @@ void callCommand() {
 
   // Unknown commands
   else {
-    Serial.println("Unrecognized command, type \"help\" for command list");
+    Serial.println("Unrecognized command,\ntype \"help\" for command list");
   }
 }
