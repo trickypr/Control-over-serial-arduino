@@ -4,6 +4,7 @@
     {
       "name": "1.0.0",
       "src": "https://github.com/trickypr/Control-over-serial-arduino/archive/v1.0.0.zip",
+      "srcFile": "./Control_over_serial/Control_over_serial.ino",
       "compiledBoards": [
         {
           "name": "leonardo",

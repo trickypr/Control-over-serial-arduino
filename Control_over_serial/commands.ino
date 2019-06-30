@@ -55,4 +55,6 @@ void callCommand() {
   else {
     Serial.println("Unrecognized command, type \"help\" for command list");
   }
+
+  Serial.print('d');
 }
