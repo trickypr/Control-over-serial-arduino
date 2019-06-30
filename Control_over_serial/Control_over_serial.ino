@@ -1,5 +1,3 @@
-const String version = "1.1.0";
-
 bool serialOn = false;
 
 String command = "";
@@ -18,13 +16,6 @@ void setup()
     Serial.begin(9600);
     serialOn = true;
   }
-  
-  while (!Serial) {
-    delay(1000);
-  }
-
-  Serial.println("Arduino over serial " + version + "\nThis software is © TrickyPR under GNU AGPLv3. More info is available on this program's github repo.");
-  Serial.println("Ok");
 }
 
 String getValue(String data, char separator, int index)
